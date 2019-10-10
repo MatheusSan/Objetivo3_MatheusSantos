@@ -15,7 +15,7 @@ public class Aviao extends Personagem implements ArmamentoVip{
     public List<Personagem> gerar(int quantidade, int size) {
         List<Personagem> novosPersonagens = new ArrayList<>();
         for (int i = 0; i < quantidade; i++) {
-            novosPersonagens.add(new Aviao(size+i, 0, false));
+            novosPersonagens.add(new Aviao(size+i+1, 50, false));
         }
         return novosPersonagens;
     }
