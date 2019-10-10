@@ -3,6 +3,7 @@ package br.com.matheussantos.control;
 import br.com.matheussantos.model.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
@@ -34,9 +35,13 @@ public class Main {
             System.out.println(personagem);
         });
 
-        //List<Personagem> novos = new ArrayList<>();
-        //aviao1.gerar();
+        Aviao av = new Aviao();
+        List<Personagem> novosAV = av.gerar(3, listaPersonagem.size());
+        listaPersonagem.addAll(novosAV);
 
+        Navio na = new Navio();
+        List<Personagem> novosNA = na.gerar(3, listaPersonagem.size());
+        listaPersonagem.addAll(novosNA);
 
         listaPersonagem.forEach(personagem -> {
             if((personagem instanceof Aviao || personagem instanceof Navio) && personagem.isAbatido() == false){
@@ -67,7 +72,5 @@ public class Main {
                 System.out.println(personagem);
             }
         });
-
-
     }
 }

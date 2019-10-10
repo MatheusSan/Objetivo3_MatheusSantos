@@ -15,7 +15,7 @@ public class Navio extends Personagem implements ArmamentoVip{
     public List<Personagem> gerar(int quantidade, int size) {
         List<Personagem> novosPersonagens = new ArrayList<>();
         for (int i = 0; i < quantidade; i++) {
-            novosPersonagens.add(new Navio(size+i, 0, false));
+            novosPersonagens.add(new Navio(size+i+1, 100, false));
         }
         return novosPersonagens;
     }
