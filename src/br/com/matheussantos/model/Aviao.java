@@ -4,11 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Aviao extends Personagem implements ArmamentoVip{
+    protected String tipo;
+
     public Aviao(int id, int pontuacao, boolean abatido) {
         super(id, pontuacao, abatido);
     }
 
     public Aviao() {
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     @Override
@@ -21,9 +31,10 @@ public class Aviao extends Personagem implements ArmamentoVip{
     }
 
     @Override
-    public int anexar(int quatidade, String tipo) {
+    public int anexar(int quantidade, String tipo) {
         if(tipo == "Missil teleguiado") {
-            return quatidade*2;
+            this.tipo = tipo;
+            return quantidade*2;
         }
         return 0;
     }

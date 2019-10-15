@@ -16,8 +16,10 @@ public abstract class Personagem {
 
     public abstract List<Personagem> gerar(int quantidade, int size);
 
-    public void abater(boolean abater){
-
+    public void abater(){
+        if (this.abatido == false){
+            this.abatido = true;
+        }
     }
 
     public int getId() {
