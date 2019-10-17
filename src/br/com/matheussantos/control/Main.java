@@ -61,15 +61,11 @@ public class Main {
             System.out.println(personagem);
         });
 
+        System.out.println("\nPersonagens após anexar missil");
         listaPersonagem.forEach(personagem -> {
             if((personagem instanceof Aviao || personagem instanceof Navio) && personagem.isAbatido() == false){
                 personagem.setPontuacao(((ArmamentoVip) personagem).anexar(personagem.getPontuacao(), "Missil teleguiado"));
             }
-        });
-
-        System.out.println("\nPontuação x2");
-        listaPersonagem.forEach(personagem -> {
-            personagem.abater();
             System.out.println(personagem);
         });
 
@@ -79,16 +75,9 @@ public class Main {
             System.out.println("\nPersonagens - pontuacao reverse");
             listaCrePont.forEach(personagem -> System.out.println(personagem));
 
-        System.out.println("\nPersonagens vivos - pontuacao reverse");
-        listaCrePont.forEach(personagem -> {
-            if (personagem.isAbatido() == false){
-                System.out.println(personagem);
-            }
-        });
-
         System.out.println("\nAvioes - pontuacao reverse");
         listaCrePont.forEach(personagem -> {
-            if (personagem.isAbatido() == false && personagem instanceof Aviao){
+            if (personagem instanceof Aviao){
                 System.out.println(personagem);
             }
         });
